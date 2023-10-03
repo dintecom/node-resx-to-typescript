@@ -1,0 +1,26 @@
+{
+  "name": "@dintecom/resx-to-typescript",
+  "version": "2.0.2",
+  "description": "Converts resx files to TypeScript models",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "author": {
+    "name": "Dintecom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dintecom/node-resx-to-typescript.git"
+  },
+  "keywords": [
+    "typescript",
+    "resx",
+    "transform",
+    "build",
+    "model"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dintecom/node-resx-to-typescript/issues"
+  },
+  "homepage": "https://github.com/dintecom/node-resx-to-typescript#readme"
+}

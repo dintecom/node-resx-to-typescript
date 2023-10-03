@@ -1,39 +1,22 @@
 {
   "name": "resx-to-typescript",
-  "version": "1.0.15",
-  "description": "Converts resx files to TypeScript models",
-  "main": "dist/index.js",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "node esbuild.config.js && tsc --emitDeclarationOnly",
+    "publish": "cd dist && npm publish --access public"
   },
-  "author": {
-    "name": "Martijn van der Corput"
+  "type": "module",
+  "dependencies": {
+    "change-case": "5.0.1",
+    "fast-xml-parser": "4.3.1"
   },
   "devDependencies": {
-    "typescript": "^1.8.10"
-  },
-  "dependencies": {
-    "add-typescript-file-to-project": "1.0.1",
-    "mkpath": "*",
-    "recursive-search": "*",
-    "xml2js": "*"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mvdcorput/node-resx-to-typescript.git"
-  },
-  "keywords": [
-    "typescript",
-    "resx",
-    "transform",
-    "build",
-    "model",
-    "vs2015"
-  ],
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mvdcorput/node-resx-to-typescript/issues"
-  },
-  "homepage": "https://github.com/mvdcorput/node-resx-to-typescript#readme"
+    "@types/node": "20.8.0",
+    "esbuild": "0.19.4",
+    "esbuild-plugin-clean": "1.0.1",
+    "esbuild-plugin-copy": "2.1.1",
+    "prettier": "3.0.3",
+    "prettier-plugin-organize-imports": "3.2.3",
+    "typescript": "5.2.2"
+  }
 }

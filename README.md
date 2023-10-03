@@ -1,38 +1,37 @@
-# node-resx-to-typescript
-
-Source code for node module: resx-to-typescript
+# @dintecom/resx-to-typescript
 
 Node module for generating TypeScript (models) files based on resx files.
 
-To use this node module at a reference to your project package.json dependencies.
+## Installation
 
-{
-    "dependencies": {
-        "resx-to-typescript": "1.0.15"
-    }
-}
+```bash
+npm install @dintecom/resx-to-typescript
+```
 
-The script requires one parameter, the virtual path to the TypeScript file you want to add.
+## Usage
+
+The script requires two parameter, the path to the ResX file and the path to the TypeScript file you want to add.
 
 So, to use the module in for instance a gulp task:
 
-var resxToTypeScript = require('resx-to-typescript');
-    
-resxToTypeScript.execute('exampleApp.resources', '/Resources', '/App/Resources');
+```js
+const { resxToTypeScript } = require("resx-to-typescript");
 
-where the parameters stand for:
+resxToTypeScript({
+  resxFolder: "./Source/Resources",
+  typeScriptFolder: "./target/resources",
+});
+```
 
-'exampleApp.resources'  -> TypeScript namespace for the resource models.
-'/Resources'            -> Relative folder to scan for .resx files.
-'/App/Resources'        -> Output directory for TypeScript files
+## Options
 
-Voilá, the TypeScript models for your resx files are added to your project and ready to use in typescript development/mvc bundling.
-
-UPDATES:
-
-2017-25-01 Removed runtime node deprecation warning. (v 1.0.15)
-2016-08-19 Refactored code and added support for multi line resources. (v 1.0.12)
-
-
-
-
+| Name                     | Type                          | Default | Description                                                                   |
+| ------------------------ | ----------------------------- | ------- | ----------------------------------------------------------------------------- |
+| indentSize               | number                        | 2       | A whole number defining the number of columns used for each indentation level |
+| indentStyle              | 'space' \| 'tab'              | 'space' | set to tab or space to use hard tabs or soft tabs respectively                |
+| resxFolder               | string                        | -       | Folder to scan for .resx files                                                |
+| resxEmpty                | 'export' \| 'skip' \| 'throw' | 'skip'  | Defines how to process resx files that do not contain any keys                |
+| typeScriptFolder         | string                        | -       | Output directory for TypeScript files                                         |
+| typeScriptNamespace      | string                        | null    | TypeScript namespace for the resource models                                  |
+| typeScriptAccessModifier | 'public' \| 'protected'       | null    | Access modifiers change the visibility of the properties of a class           |
+| typeScriptPropertyType   | boolean                       | false   | Enables explicit definition of property types                                 |
