@@ -1,4 +1,4 @@
-import { camelCase, kebabCase, pascalCase } from 'change-case';
+import { kebabCase, pascalCase } from 'change-case';
 import { XMLParser } from 'fast-xml-parser';
 import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'fs';
 import { EOL } from 'os';
@@ -88,7 +88,7 @@ function buildTypeScript(
 
         let property = '';
         if (typeScriptAccessModifier) property += `${typeScriptAccessModifier} `;
-        property += camelCase(name);
+        property += lowerCaseFirstLetter(name);
         if (typeScriptPropertyType) property += `: ${typeScriptPropertyType}`;
         property += ` = '${value}';`;
         appendLine(property);
@@ -110,4 +110,8 @@ function recursiveSearchSync(dir: string, filter: RegExp): string[] {
         .map(e => pathJoin(dir, e as string))
         .filter(e => !statSync(e).isDirectory())
         .filter(f => filter.test(f)) as string[];
+}
+
+function lowerCaseFirstLetter(text: string) {
+    return text ? text.charAt(0).toLowerCase() + text.slice(1) : text;
 }
