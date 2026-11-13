@@ -8,7 +8,7 @@ build({
     bundle: true,
     sourcemap: false,
     platform: 'node',
-    target: 'node18',
+    target: 'node22',
     plugins: [
         clean({
             patterns: ['./dist/*'],

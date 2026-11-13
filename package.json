@@ -1,22 +1,22 @@
 {
   "name": "resx-to-typescript",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "build": "node esbuild.config.js && tsc --emitDeclarationOnly",
-    "publish": "cd dist && npm publish --access public"
+    "build": "node esbuild.config.js && tsc --emitDeclarationOnly"
   },
   "type": "module",
   "dependencies": {
-    "change-case": "5.1.2",
-    "fast-xml-parser": "4.3.2"
+    "change-case": "5.4.4",
+    "fast-xml-parser": "5.12.0"
   },
   "devDependencies": {
-    "@types/node": "20.9.0",
-    "esbuild": "0.19.5",
+    "@types/node": "22.20.5",
+    "esbuild": "0.28.2",
     "esbuild-plugin-clean": "1.0.1",
     "esbuild-plugin-copy": "2.1.1",
-    "prettier": "3.1.0",
-    "prettier-plugin-organize-imports": "3.2.4",
-    "typescript": "5.2.2"
+    "prettier": "3.10.1",
+    "prettier-plugin-organize-imports": "4.3.0",
+    "typescript": "7.0.2"
   }
 }

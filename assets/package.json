@@ -1,9 +1,12 @@
 {
   "name": "@dintecom/resx-to-typescript",
-  "version": "2.1.0",
-  "description": "Converts resx files to TypeScript models",
+  "version": "2.2.0",
+  "description": "Converts resx files to TypeScript models or JSON",
   "main": "index.js",
   "types": "index.d.ts",
+  "engines": {
+    "node": ">=22"
+  },
   "author": {
     "name": "Dintecom"
   },
@@ -14,6 +17,7 @@
   "keywords": [
     "typescript",
     "resx",
+    "json",
     "transform",
     "build",
     "model"
